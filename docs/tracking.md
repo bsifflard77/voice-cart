@@ -1,8 +1,8 @@
 # VoiceCart Project Tracking
 
-## Project Status: Frontend MVP Complete ✅
+## Project Status: Mobile Network Configuration Complete ✅
 
-### Last Updated: October 24, 2025
+### Last Updated: October 25, 2025 9:30 AM EST
 
 ---
 
@@ -22,6 +22,7 @@
 - [x] Server tested and running (port 5000)
 - [x] API endpoints tested and working
 - [x] AI categorization tested and working
+- [x] Network binding configured (0.0.0.0) for mobile access
 
 ### Frontend ✅ MVP COMPLETE
 - [x] React + TypeScript + Vite scaffolded
@@ -34,12 +35,14 @@
 - [x] Item management (add, delete, mark as picked up)
 - [x] Mobile-responsive design (Tailwind CSS)
 - [x] Error handling and loading states
-- [ ] Mobile device testing (pending)
+- [x] Network configuration for mobile access (10/25)
+- [ ] Windows Firewall configuration (user action required)
+- [ ] Mobile device testing (pending firewall setup)
 - [ ] PWA features (offline support, installable)
 
 ---
 
-## Completed Items (Sessions 10/23 & 10/24/2025)
+## Completed Items (Sessions 10/23, 10/24 & 10/25/2025)
 
 ### Backend (10/23/2025)
 1. Created 7 backend files (controllers, routes, server)
@@ -76,23 +79,43 @@
    - Delete items
    - Items grouped by department
 
+### Mobile Network Configuration (10/25/2025)
+1. Updated backend server configuration:
+   - Changed `app.listen()` to bind to all network interfaces (0.0.0.0)
+   - Added CORS origins for localhost and network IP (192.168.40.214)
+   - Enhanced startup message to display network URL
+
+2. Updated environment files:
+   - Backend `.env`: Updated `FRONTEND_URL` to network IP
+   - Frontend `.env.development`: Updated `VITE_API_URL` to network IP
+
+3. Created comprehensive documentation:
+   - `docs/mobile-setup.md` - Complete mobile configuration guide
+   - PowerShell firewall commands
+   - Troubleshooting steps
+   - Alternative solutions (ngrok)
+
+4. Server management:
+   - Restarted both servers with new configuration
+   - Verified network binding (0.0.0.0:5000 and network access on port 3000)
+
 ---
 
 ## Next Steps (Priority Order)
 
-### 1. IMMEDIATE - Commit to GitHub
-- [ ] Stop development servers
-- [ ] Stage all files: `git add .`
-- [ ] Commit: `git commit -m "Complete VoiceCart frontend MVP"`
-- [ ] Push: `git push origin claude/scaffold-voice-cart-frontend-011CUQHPEJDw94ac6HJZASny`
+### 1. Configure Windows Firewall (USER ACTION REQUIRED)
+- [ ] Open PowerShell as Administrator
+- [ ] Run firewall commands for ports 3000 and 5000
+- [ ] Verify rules created successfully
+- [ ] See docs/mobile-setup.md for detailed instructions
 
-### 2. Fix Mobile Access
-- [ ] Troubleshoot network access issue (http://192.168.40.214:3000)
-- [ ] Check Windows Firewall settings
-- [ ] Verify WiFi network connectivity
-- [ ] Test on iPhone Safari/Chrome
+### 2. Test Mobile Access
+- [ ] Test desktop network access (http://192.168.40.214:3000)
+- [ ] Test backend health endpoint on mobile
+- [ ] Test on iPhone Safari
 - [ ] Test on iPad
-- [ ] Test on Android Chrome
+- [ ] Document voice input functionality on Safari
+- [ ] Test on Android Chrome (if available)
 
 ### 3. Add PWA Features
 - [ ] Create manifest.json for installable app
@@ -121,16 +144,21 @@
 
 ### Backend Server
 - **Port:** 5000
+- **Host:** 0.0.0.0 (all network interfaces)
 - **Environment:** development
-- **Frontend URL:** http://localhost:3000
-- **Status:** ✅ Running
+- **Local URL:** http://localhost:5000
+- **Network URL:** http://192.168.40.214:5000
+- **Frontend URL:** http://192.168.40.214:3000
+- **Status:** ✅ Running (configured for mobile)
 
 ### Frontend Server
 - **Port:** 3000
+- **Host:** Network enabled (host: true in vite.config.ts)
 - **Environment:** development
-- **API URL:** http://localhost:5000
-- **Network URL:** http://192.168.40.214:3000 (not working yet)
-- **Status:** ✅ Running
+- **Local URL:** http://localhost:3000
+- **Network URL:** http://192.168.40.214:3000
+- **API URL:** http://192.168.40.214:5000
+- **Status:** ✅ Running (configured for mobile, pending firewall setup)
 
 ### Environment Variables Status
 - ✅ DB_HOST
@@ -141,8 +169,8 @@
 - ✅ OPENAI_API_KEY (configured and working)
 - ✅ PORT
 - ✅ NODE_ENV
-- ✅ FRONTEND_URL
-- ✅ VITE_API_URL
+- ✅ FRONTEND_URL (updated to network IP)
+- ✅ VITE_API_URL (updated to network IP)
 
 ---
 
@@ -182,19 +210,21 @@
 
 ## Known Issues / To-Do Items
 
-### Issue 1: Mobile Network Access ⚠️
-**Problem:** Can't access app from phone/iPad via network URL
-**Impact:** Can't test on mobile devices yet
+### Issue 1: Windows Firewall Configuration ⚠️
+**Problem:** Firewall rules not yet configured for ports 3000 and 5000
+**Impact:** Mobile devices cannot access the app yet
+**Status:** Configuration complete, user action required
 **Next Steps:**
-- Check Windows Firewall
-- Verify network settings
-- Consider cloud deployment for easier mobile testing
+- User must run PowerShell commands as Administrator
+- See docs/mobile-setup.md for complete instructions
+- Alternative: Use ngrok if firewall config is problematic
 
 ### Issue 2: Voice Input Browser Compatibility ⚠️
-**Chrome:** ✅ Working (confirmed)
+**Chrome (Desktop):** ✅ Working (confirmed)
 **Edge:** ✅ Should work (not tested)
-**Safari:** ⚠️ Limited support (needs testing on iPhone)
-**Firefox:** ❌ No support
+**Safari (iOS):** ⚠️ May require HTTPS (needs testing on iPhone)
+**Firefox:** ❌ No Web Speech API support
+**Note:** Manual text input works on all browsers as fallback
 
 ### Issue 3: First-time Setup ⚠️
 **Microphone permissions:**
@@ -224,35 +254,37 @@ voice-cart/
 │   │   │   └── openai.js ✅
 │   │   ├── db/
 │   │   │   └── setup.js ✅ (auto-creates DB)
-│   │   └── server.js ✅
-│   ├── .env ✅
+│   │   └── server.js ✅ UPDATED (10/25)
+│   ├── .env ✅ UPDATED (10/25)
 │   ├── .env.example ✅
 │   ├── package.json ✅
 │   └── database-schema.sql ✅
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── StoreSelector.tsx ✅ NEW
-│   │   │   ├── VoiceInput.tsx ✅ NEW
-│   │   │   ├── ManualInput.tsx ✅ NEW
-│   │   │   ├── ShoppingList.tsx ✅ UPDATED
-│   │   │   ├── ItemCard.tsx ✅ NEW
+│   │   │   ├── StoreSelector.tsx ✅
+│   │   │   ├── VoiceInput.tsx ✅
+│   │   │   ├── ManualInput.tsx ✅
+│   │   │   ├── ShoppingList.tsx ✅
+│   │   │   ├── ItemCard.tsx ✅
 │   │   │   └── ItemDisplay.tsx ✅ (legacy)
 │   │   ├── services/
-│   │   │   └── api.ts ✅ NEW
+│   │   │   └── api.ts ✅
 │   │   ├── types/
-│   │   │   └── index.ts ✅ NEW
-│   │   ├── App.tsx ✅ UPDATED
+│   │   │   └── index.ts ✅
+│   │   ├── App.tsx ✅
 │   │   ├── main.tsx ✅
 │   │   └── index.css ✅
-│   ├── .env.development ✅ NEW
-│   ├── package.json ✅ UPDATED
+│   ├── .env.development ✅ UPDATED (10/25)
+│   ├── package.json ✅
 │   └── tailwind.config.js ✅
 └── docs/
-    ├── tracking.md ✅ THIS FILE
+    ├── tracking.md ✅ THIS FILE (UPDATED 10/25)
     ├── session-summary-2025-10-23.md ✅
-    ├── session-summary-2025-10-24.md ✅ NEW
-    ├── next-session-start.md ✅ TO UPDATE
+    ├── session-summary-2025-10-24.md ✅
+    ├── session-summary-2025-10-25.md ✅ NEW
+    ├── next-session-start.md ✅ UPDATED (10/25)
+    ├── mobile-setup.md ✅ NEW (10/25)
     └── voicecart-constitution.md ✅
 ```
 
@@ -264,14 +296,15 @@ voice-cart/
 
 **Main Branch:** Same as current branch
 
-**Uncommitted Changes:**
-- Frontend components (6 new files)
-- API service layer (2 new files)
-- Frontend configuration (.env.development)
-- Updated package.json/package-lock.json
-- Documentation updates
+**Uncommitted Changes (10/25 session):**
+- Backend server configuration (network binding)
+- Backend .env (FRONTEND_URL updated)
+- Frontend .env.development (API URL updated)
+- Mobile setup documentation
+- Session summary 10/25
+- Updated tracking.md and next-session-start.md
 
-**Action Needed:** Commit and push all changes to GitHub
+**Action Needed:** Commit and push all 10/25 changes to GitHub
 
 ---
 
@@ -286,18 +319,26 @@ voice-cart/
 - ✅ Department grouping working
 - ✅ Multiple store lists working
 
+### Network Configuration ✅ (10/25)
+- ✅ Backend listening on all interfaces (0.0.0.0)
+- ✅ Frontend configured for network access
+- ✅ CORS configured for network IP
+- ⚠️ Firewall rules pending
+
 ### Mobile Testing ⚠️
-- [ ] iPhone Safari (pending)
-- [ ] iPhone Chrome (pending)
-- [ ] iPad (pending)
+- [ ] iPhone Safari (pending firewall setup)
+- [ ] iPhone Chrome (pending firewall setup)
+- [ ] iPad (pending firewall setup)
 - [ ] Android Chrome (pending)
 
 ---
 
 ## Resources & References
 
-- **Frontend:** http://localhost:3000
-- **Backend:** http://localhost:5000
+- **Frontend (Local):** http://localhost:3000
+- **Frontend (Network):** http://192.168.40.214:3000
+- **Backend (Local):** http://localhost:5000
+- **Backend (Network):** http://192.168.40.214:5000
 - **GitHub:** https://github.com/bsifflard77/voice-cart
 - **PostgreSQL:** C:\Program Files\PostgreSQL\18\
 - **Documentation:** D:\Monomoy Strategies\Projects\voice-cart\docs\
@@ -316,13 +357,22 @@ voice-cart/
 
 ## Session Notes
 
+### October 25, 2025 (9:10 AM - 9:30 AM EST)
+- ✅ Configured backend to listen on all network interfaces (0.0.0.0)
+- ✅ Updated CORS to allow network IP (192.168.40.214)
+- ✅ Updated environment files for mobile access
+- ✅ Created comprehensive mobile setup documentation
+- ✅ Restarted servers with new configuration
+- ⚠️ Windows Firewall rules pending (user action required)
+- ⚠️ Mobile device testing pending (after firewall setup)
+- ✅ All changes documented and ready to commit
+
 ### October 24, 2025
 - ✅ Built complete frontend MVP
 - ✅ Voice input working after fixing Chrome permissions
 - ✅ Manual text input confirmed working
 - ✅ AI categorization accurate (bananas → Produce)
-- ⚠️ Mobile network access issue (to be fixed)
-- ⚠️ Need to commit all code to GitHub
+- ✅ All code committed and pushed to GitHub
 
 ### October 23, 2025
 - ✅ Backend setup complete
@@ -330,4 +380,4 @@ voice-cart/
 - ✅ All API endpoints working
 - ✅ Improved database setup script
 
-**Status: Ready for mobile testing and deployment! 🚀**
+**Status: Mobile network configuration complete! Firewall setup and testing next! 🚀**
