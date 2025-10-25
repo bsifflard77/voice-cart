@@ -12,7 +12,10 @@
       "Bash(taskkill /F /PID 24384)",
       "Bash(taskkill //F //PID 49544)",
       "Bash(npm run dev:*)",
-      "Bash(ipconfig:*)"
+      "Bash(ipconfig:*)",
+      "Read(//d/Monomoy Strategies/Projects/specmap-mcp/**)",
+      "Bash(D:Monomoy StrategiesProjectsspecmap-mcpsrc)",
+      "Bash(python -c:*)"
     ],
     "deny": [],
     "ask": []
