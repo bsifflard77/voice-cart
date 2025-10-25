@@ -8,7 +8,11 @@
       "Bash(set:*)",
       "Bash(npm install:*)",
       "Bash(git merge:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(taskkill /F /PID 24384)",
+      "Bash(taskkill //F //PID 49544)",
+      "Bash(npm run dev:*)",
+      "Bash(ipconfig:*)"
     ],
     "deny": [],
     "ask": []

@@ -4,6 +4,9 @@ import dotenv from 'dotenv'
 import storesRoutes from './routes/stores.js'
 import departmentsRoutes from './routes/departments.js'
 import itemsRoutes from './routes/items.js'
+import authRoutes from './routes/auth.js'
+import shoppingListsRoutes from './routes/shoppingLists.js'
+import itemsV2Routes from './routes/itemsV2.js'
 import pool from './config/database.js'
 
 dotenv.config()
@@ -50,17 +53,33 @@ app.get('/health', async (req, res) => {
 // API Routes
 app.use('/api/stores', storesRoutes)
 app.use('/api/departments', departmentsRoutes)
-app.use('/api/items', itemsRoutes)
+app.use('/api/items', itemsRoutes) // V1 - Legacy
+
+// V2 Routes - Authentication and Shopping Lists
+app.use('/api/auth', authRoutes)
+app.use('/api/shopping-lists', shoppingListsRoutes)
+app.use('/api/v2/items', itemsV2Routes)
 
 // Root endpoint
 app.get('/', (req, res) => {
   res.json({
     name: 'VoiceCart API',
-    version: '1.0.0',
+    version: '2.0.0',
     endpoints: {
-      stores: '/api/stores',
-      departments: '/api/departments',
-      items: '/api/items',
+      // V2 - Authentication & Shopping Lists
+      auth: {
+        register: '/api/auth/register',
+        login: '/api/auth/login',
+        profile: '/api/auth/me'
+      },
+      shoppingLists: '/api/shopping-lists',
+      items: '/api/v2/items',
+      // V1 - Legacy (for backward compatibility)
+      legacy: {
+        stores: '/api/stores',
+        departments: '/api/departments',
+        items: '/api/items'
+      },
       health: '/health'
     }
   })
