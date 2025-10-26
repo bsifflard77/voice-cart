@@ -2,13 +2,15 @@ import { useState, useEffect } from 'react'
 import VoiceInput from './components/VoiceInput'
 import ManualInput from './components/ManualInput'
 import ShoppingList from './components/ShoppingList'
-import StoreSelector from './components/StoreSelector'
-import { Store, Item } from './types'
+import ShoppingListSelector from './components/ShoppingListSelector'
+import { Store, Item, ShoppingList as ShoppingListType } from './types'
+import { useAuth } from './contexts/AuthContext'
 import * as api from './services/api'
 
 function App() {
+  const { user, logout } = useAuth()
   const [stores, setStores] = useState<Store[]>([])
-  const [selectedStore, setSelectedStore] = useState<Store | null>(null)
+  const [selectedList, setSelectedList] = useState<ShoppingListType | null>(null)
   const [items, setItems] = useState<Item[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -18,21 +20,19 @@ function App() {
     loadStores()
   }, [])
 
-  // Load items when store changes
+  // Load items when shopping list changes
   useEffect(() => {
-    if (selectedStore) {
+    if (selectedList) {
       loadItems()
+    } else {
+      setItems([])
     }
-  }, [selectedStore])
+  }, [selectedList])
 
   const loadStores = async () => {
     try {
       const storesData = await api.getStores()
       setStores(storesData)
-      // Auto-select first store
-      if (storesData.length > 0 && !selectedStore) {
-        setSelectedStore(storesData[0])
-      }
       setLoading(false)
     } catch (err) {
       console.error('Error loading stores:', err)
@@ -42,10 +42,10 @@ function App() {
   }
 
   const loadItems = async () => {
-    if (!selectedStore) return
+    if (!selectedList) return
 
     try {
-      const itemsData = await api.getActiveItems(selectedStore.id)
+      const itemsData = await api.getListItems(selectedList.id)
       setItems(itemsData)
     } catch (err) {
       console.error('Error loading items:', err)
@@ -54,13 +54,10 @@ function App() {
   }
 
   const handleAddItem = async (itemName: string) => {
-    if (!selectedStore) return
+    if (!selectedList) return
 
     try {
-      const newItem = await api.createItem({
-        storeId: selectedStore.id,
-        name: itemName,
-      })
+      const newItem = await api.addListItem(selectedList.id, { name: itemName })
       setItems([newItem, ...items])
     } catch (err) {
       console.error('Error adding item:', err)
@@ -71,7 +68,7 @@ function App() {
 
   const handlePickup = async (itemId: number) => {
     try {
-      await api.markItemAsPickedUp(itemId)
+      await api.markItemAsPickedUpV2(itemId)
       // Refresh items
       await loadItems()
     } catch (err) {
@@ -82,7 +79,7 @@ function App() {
 
   const handleDelete = async (itemId: number) => {
     try {
-      await api.deleteItem(itemId, false)
+      await api.deleteItemV2(itemId)
       setItems(items.filter(item => item.id !== itemId))
     } catch (err) {
       console.error('Error deleting item:', err)
@@ -104,13 +101,28 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 safe-area-inset-top safe-area-inset-bottom">
       <div className="container mx-auto px-4 py-8 max-w-2xl">
-        <header className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">
-            🛒 VoiceCart
-          </h1>
-          <p className="text-gray-600">
-            Your voice-first shopping list
-          </p>
+        <header className="mb-8">
+          <div className="flex justify-between items-start mb-4">
+            <div className="flex-1">
+              <h1 className="text-4xl font-bold text-gray-800 mb-2">
+                VoiceCart
+              </h1>
+              <p className="text-gray-600">
+                Your voice-first shopping list
+              </p>
+            </div>
+            <div className="text-right">
+              <p className="text-sm text-gray-600 mb-2">
+                Welcome, {user?.firstName || 'User'}
+              </p>
+              <button
+                onClick={logout}
+                className="text-xs text-primary-600 hover:text-primary-700 font-semibold underline"
+              >
+                Sign Out
+              </button>
+            </div>
+          </div>
         </header>
 
         {error && (
@@ -126,14 +138,20 @@ function App() {
         )}
 
         <main className="space-y-6">
-          <StoreSelector
+          <ShoppingListSelector
             stores={stores}
-            selectedStore={selectedStore}
-            onSelectStore={setSelectedStore}
+            onSelectList={setSelectedList}
           />
 
-          {selectedStore && (
+          {selectedList && (
             <>
+              <div className="bg-white rounded-lg shadow p-4 text-center">
+                <h3 className="text-lg font-semibold text-gray-800">
+                  {selectedList.name}
+                </h3>
+                <p className="text-sm text-gray-600">{selectedList.store_name}</p>
+              </div>
+
               <VoiceInput onAddItem={handleAddItem} />
               <div className="text-center text-sm text-gray-500 my-2">or</div>
               <ManualInput onAddItem={handleAddItem} />

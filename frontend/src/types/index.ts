@@ -52,3 +52,44 @@ export interface UpdateItemRequest {
   departmentId?: number
   status?: 'active' | 'picked_up' | 'deleted'
 }
+
+// Authentication types
+export interface User {
+  id: number
+  email: string
+  firstName: string
+  lastName: string
+  createdAt?: string
+  lastLogin?: string
+}
+
+export interface AuthResponse {
+  message: string
+  token: string
+  user: User
+}
+
+export interface LoginRequest {
+  email: string
+  password: string
+}
+
+export interface RegisterRequest {
+  email: string
+  password: string
+  firstName: string
+  lastName: string
+}
+
+export interface ShoppingList {
+  id: number
+  user_id: number
+  store_id: number
+  name: string
+  status: 'active' | 'completed' | 'archived'
+  created_at: string
+  updated_at: string
+  store_name?: string
+  active_items_count?: number
+  picked_up_items_count?: number
+}

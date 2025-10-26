@@ -3,9 +3,16 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
+// Lazy initialization of OpenAI client
+let openai = null
+const getOpenAIClient = () => {
+  if (!openai && process.env.OPENAI_API_KEY && process.env.OPENAI_API_KEY !== 'sk-test-dummy-key-for-development') {
+    openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    })
+  }
+  return openai
+}
 
 /**
  * Categorize a shopping item into a department using OpenAI
@@ -15,9 +22,17 @@ const openai = new OpenAI({
  */
 export async function categorizeItem(itemName, departments) {
   try {
+    const client = getOpenAIClient()
+
+    // If OpenAI is not configured, fall back to default department
+    if (!client) {
+      console.log('OpenAI not configured, using default department categorization')
+      return departments.find(d => d === 'Other') || departments[0]
+    }
+
     const departmentList = departments.join(', ')
 
-    const completion = await openai.chat.completions.create({
+    const completion = await client.chat.completions.create({
       model: 'gpt-3.5-turbo',
       messages: [
         {
