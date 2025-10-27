@@ -177,19 +177,9 @@ export const completeShoppingList = async (id: number): Promise<ShoppingList> =>
 }
 
 export const getListItems = async (listId: number): Promise<Item[]> => {
-  const response = await api.get<any>(`/api/shopping-lists/${listId}/items`)
-  // Backend returns grouped format, flatten it
-  const data = response.data
-
-  if (data.items_by_department) {
-    const allItems: Item[] = []
-    Object.values(data.items_by_department).forEach((deptItems: any) => {
-      allItems.push(...deptItems)
-    })
-    return allItems
-  }
-
-  return []
+  const response = await api.get<Item[]>(`/api/shopping-lists/${listId}/items`)
+  // Backend returns a flat array of items
+  return response.data || []
 }
 
 export const addListItem = async (listId: number, data: { name: string; notes?: string }): Promise<Item> => {
