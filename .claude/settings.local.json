@@ -16,7 +16,8 @@
       "Read(//d/Monomoy Strategies/Projects/specmap-mcp/**)",
       "Bash(D:Monomoy StrategiesProjectsspecmap-mcpsrc)",
       "Bash(python -c:*)",
-      "Bash(node generate-icons.js:*)"
+      "Bash(node generate-icons.js:*)",
+      "Bash(node migrate.js:*)"
     ],
     "deny": [],
     "ask": []

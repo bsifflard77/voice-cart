@@ -12,7 +12,7 @@ interface StoreSelectorProps {
 export default function StoreSelector({ stores, selectedStore, onSelectStore }: StoreSelectorProps) {
   return (
     <div className="w-full">
-      <Listbox value={selectedStore} onChange={onSelectStore}>
+      <Listbox value={selectedStore || undefined} onChange={onSelectStore}>
         <div className="relative">
           <Listbox.Button className="relative w-full cursor-pointer rounded-xl bg-white py-4 pl-4 pr-10 text-left shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 sm:text-sm">
             <span className="block truncate text-lg font-semibold text-gray-800">

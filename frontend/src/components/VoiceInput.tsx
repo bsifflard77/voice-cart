@@ -36,7 +36,7 @@ function VoiceInput({ onAddItem }: VoiceInputProps) {
       console.log('Voice recognition started')
     }
 
-    recognition.onresult = async (event) => {
+    recognition.onresult = async (event: any) => {
       let interimTranscript = ''
       let finalTranscript = ''
 
@@ -73,7 +73,7 @@ function VoiceInput({ onAddItem }: VoiceInputProps) {
       }
     }
 
-    recognition.onerror = (event) => {
+    recognition.onerror = (event: any) => {
       console.error('Speech recognition error:', event.error)
       if (event.error === 'no-speech') {
         setError('No speech detected. Please try again and speak clearly.')
@@ -186,14 +186,6 @@ function VoiceInput({ onAddItem }: VoiceInputProps) {
       </div>
     </div>
   )
-}
-
-// Type declarations for browser speech recognition
-declare global {
-  interface Window {
-    SpeechRecognition: typeof SpeechRecognition
-    webkitSpeechRecognition: typeof SpeechRecognition
-  }
 }
 
 export default VoiceInput
