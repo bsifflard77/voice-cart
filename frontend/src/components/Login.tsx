@@ -31,7 +31,7 @@ const Login = ({ onSwitchToRegister }: LoginProps) => {
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
           <h1 className="text-5xl font-bold text-gray-800 mb-2">
-            VoiceCart
+            VoiceCartz
           </h1>
           <p className="text-gray-600">Sign in to your account</p>
         </div>

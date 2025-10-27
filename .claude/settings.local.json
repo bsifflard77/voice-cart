@@ -15,7 +15,8 @@
       "Bash(ipconfig:*)",
       "Read(//d/Monomoy Strategies/Projects/specmap-mcp/**)",
       "Bash(D:Monomoy StrategiesProjectsspecmap-mcpsrc)",
-      "Bash(python -c:*)"
+      "Bash(python -c:*)",
+      "Bash(node generate-icons.js:*)"
     ],
     "deny": [],
     "ask": []

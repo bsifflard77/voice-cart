@@ -1,7 +1,7 @@
 {
-  "name": "voicecart-backend",
+  "name": "voicecartz-backend",
   "version": "1.0.0",
-  "description": "VoiceCart backend API with AI categorization",
+  "description": "VoiceCartz backend API with AI categorization",
   "main": "src/server.js",
   "type": "module",
   "scripts": {
@@ -10,7 +10,7 @@
     "db:setup": "node src/db/setup.js"
   },
   "keywords": [
-    "voicecart",
+    "voicecartz",
     "shopping",
     "api"
   ],

@@ -1,4 +1,4 @@
-# VoiceCart
+# VoiceCartz
 
 A voice-first shopping list app that intelligently categorizes items by store.
 
@@ -11,7 +11,7 @@ A voice-first shopping list app that intelligently categorizes items by store.
 
 ## Project Structure
 ```
-voicecart/
+voicecartz/
 ├── frontend/          # React web app
 ├── backend/           # Node.js API
 └── docs/              # Documentation

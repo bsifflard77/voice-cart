@@ -1,4 +1,4 @@
-# VoiceCart Hosting Options Guide
+# VoiceCartz Hosting Options Guide
 
 **Last Updated:** October 26, 2025
 
@@ -77,7 +77,7 @@
 - Shared CPU
 - 512 MB RAM
 
-**Deploy VoiceCart:**
+**Deploy VoiceCartz:**
 ```bash
 # Install Railway CLI
 npm i -g @railway/cli
@@ -124,7 +124,7 @@ railway up
 - PostgreSQL: 1 GB storage
 - Sleeps after 15 min inactivity
 
-**Deploy VoiceCart:**
+**Deploy VoiceCartz:**
 1. Push code to GitHub
 2. Connect to Render
 3. Create Web Service (backend)
@@ -168,7 +168,7 @@ railway up
 - 50,000 monthly active users
 - 2 GB file storage
 
-**Deploy VoiceCart:**
+**Deploy VoiceCartz:**
 1. **Frontend on Vercel:**
    ```bash
    cd frontend
@@ -212,7 +212,7 @@ railway up
 - 160 GB outbound transfer
 - 3 GB persistent storage
 
-**Deploy VoiceCart:**
+**Deploy VoiceCartz:**
 ```bash
 # Install flyctl
 curl -L https://fly.io/install.sh | sh
@@ -253,7 +253,7 @@ flyctl launch
 - Basic Dyno: $7/month
 - PostgreSQL: $5/month (mini)
 
-**Deploy VoiceCart:**
+**Deploy VoiceCartz:**
 ```bash
 # Install Heroku CLI
 npm install -g heroku
@@ -262,7 +262,7 @@ npm install -g heroku
 heroku login
 
 # Create app
-heroku create voicecart-app
+heroku create voicecartz-app
 
 # Add PostgreSQL
 heroku addons:create heroku-postgresql:mini
@@ -302,7 +302,7 @@ git push heroku main
 - Database: $15/month (managed PostgreSQL)
 - Total: ~$20/month minimum
 
-**Deploy VoiceCart:**
+**Deploy VoiceCartz:**
 1. Create App Platform app
 2. Connect GitHub repo
 3. Add managed PostgreSQL
@@ -347,7 +347,7 @@ git push heroku main
 - Typical: $30-100/month
 - Enterprise: $500+/month
 
-**Deploy VoiceCart:**
+**Deploy VoiceCartz:**
 1. **Frontend:**
    - S3 for static files
    - CloudFront for CDN
@@ -398,17 +398,17 @@ git push heroku main
 - Typical: $30-80/month
 - Enterprise: $200+/month
 
-**Deploy VoiceCart:**
+**Deploy VoiceCartz:**
 ```bash
 # Install gcloud CLI
 gcloud init
 
 # Deploy backend (Cloud Run)
-gcloud run deploy voicecart-api \
+gcloud run deploy voicecartz-api \
   --source ./backend
 
 # Deploy frontend (Cloud Storage)
-gcloud storage cp -r frontend/dist gs://voicecart-frontend
+gcloud storage cp -r frontend/dist gs://voicecartz-frontend
 ```
 
 **Estimated Monthly Cost:**
@@ -446,19 +446,19 @@ gcloud storage cp -r frontend/dist gs://voicecart-frontend
 - Typical: $40-100/month
 - Enterprise: $300+/month
 
-**Deploy VoiceCart:**
+**Deploy VoiceCartz:**
 ```bash
 # Install Azure CLI
 az login
 
 # Create resource group
-az group create --name voicecart-rg --location eastus
+az group create --name voicecartz-rg --location eastus
 
 # Deploy App Service
-az webapp up --name voicecart-api --runtime "NODE:22-lts"
+az webapp up --name voicecartz-api --runtime "NODE:22-lts"
 
 # Create database
-az postgres server create --name voicecart-db
+az postgres server create --name voicecartz-db
 ```
 
 **Estimated Monthly Cost:**
@@ -523,7 +523,7 @@ git push
 2. Sign in with GitHub
 3. Click "New Project"
 4. Select "Deploy from GitHub repo"
-5. Choose your voicecart repository
+5. Choose your voicecartz repository
 
 **Step 3: Add PostgreSQL**
 1. Click "New" → "Database" → "PostgreSQL"
@@ -567,7 +567,7 @@ VITE_API_URL=https://your-backend.up.railway.app
 
 **Step 2: Create PostgreSQL Database**
 1. New → PostgreSQL
-2. Name: voicecart-db
+2. Name: voicecartz-db
 3. Plan: Free
 4. Create Database
 5. Note the Internal Database URL
@@ -576,7 +576,7 @@ VITE_API_URL=https://your-backend.up.railway.app
 1. New → Web Service
 2. Connect GitHub repository
 3. Settings:
-   - Name: voicecart-api
+   - Name: voicecartz-api
    - Environment: Node
    - Build Command: `cd backend && npm install`
    - Start Command: `cd backend && npm start`
@@ -588,20 +588,20 @@ VITE_API_URL=https://your-backend.up.railway.app
    NODE_ENV=production
    JWT_SECRET=<strong-secret>
    OPENAI_API_KEY=<your-key>
-   FRONTEND_URL=https://voicecart-frontend.onrender.com
+   FRONTEND_URL=https://voicecartz-frontend.onrender.com
    ```
 
 **Step 4: Create Frontend Service**
 1. New → Static Site
 2. Connect GitHub repository
 3. Settings:
-   - Name: voicecart-frontend
+   - Name: voicecartz-frontend
    - Build Command: `cd frontend && npm install && npm run build`
    - Publish Directory: `frontend/dist`
 
 4. Environment Variables:
    ```
-   VITE_API_URL=https://voicecart-api.onrender.com
+   VITE_API_URL=https://voicecartz-api.onrender.com
    ```
 
 **Step 5: Database Migration**
@@ -635,7 +635,7 @@ vercel deploy --prod
 **Step 2: Create Supabase Project**
 1. Go to https://supabase.com
 2. New Project
-3. Name: voicecart
+3. Name: voicecartz
 4. Choose region
 5. Set database password
 

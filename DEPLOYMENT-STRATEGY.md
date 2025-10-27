@@ -1,6 +1,6 @@
-# VoiceCart Deployment Strategy
+# VoiceCartz Deployment Strategy
 **Date:** October 26, 2025
-**Goal:** Get VoiceCart accessible from your phone via the internet
+**Goal:** Get VoiceCartz accessible from your phone via the internet
 
 ---
 
@@ -21,7 +21,7 @@
 
 ---
 
-## 🚀 Quick Start: Get VoiceCart Online in 30 Minutes
+## 🚀 Quick Start: Get VoiceCartz Online in 30 Minutes
 
 ### Recommended Option: **Railway** (Best for Quick Start)
 
@@ -37,8 +37,8 @@
 
 #### 1. Push Your Code to GitHub (5 minutes)
 ```bash
-cd "d:\Monomoy Strategies\Projects\voice-cart"
-git push origin claude/scaffold-voice-cart-frontend-011CUQHPEJDw94ac6HJZASny
+cd "d:\Monomoy Strategies\Projects\voicecartz"
+git push origin claude/scaffold-voicecartz-frontend-011CUQHPEJDw94ac6HJZASny
 ```
 
 #### 2. Sign Up for Railway (2 minutes)
@@ -48,7 +48,7 @@ git push origin claude/scaffold-voice-cart-frontend-011CUQHPEJDw94ac6HJZASny
 
 #### 3. Deploy Backend + Database (10 minutes)
 1. Click "New Project" → "Deploy from GitHub repo"
-2. Select `voice-cart` repository
+2. Select `voicecartz` repository
 3. Railway will detect the Node.js backend
 4. Add PostgreSQL:
    - Click "+ New"
@@ -71,7 +71,7 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ```
 
 #### 5. Deploy Frontend (5 minutes)
-1. Click "+ New" → "GitHub Repo" → Select `voice-cart` again
+1. Click "+ New" → "GitHub Repo" → Select `voicecartz` again
 2. Configure:
    - **Root Directory:** `frontend`
    - **Build Command:** `npm install && npm run build`
@@ -82,7 +82,7 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
    ```
 
 #### 6. Update CORS and URLs (3 minutes)
-1. Get your frontend URL from Railway (e.g., `https://voicecart.up.railway.app`)
+1. Get your frontend URL from Railway (e.g., `https://voicecartz.up.railway.app`)
 2. Update backend's `FRONTEND_URL` variable with this URL
 3. Both services will auto-redeploy
 
@@ -244,7 +244,7 @@ echo $VITE_API_URL
 ### Database connection errors
 - Verify DATABASE_URL is set
 - Check PostgreSQL is running
-- Ensure database "voicecart" exists
+- Ensure database "voicecartz" exists
 
 ### CORS errors
 - Add your frontend URL to backend CORS origins
@@ -257,7 +257,7 @@ echo $VITE_API_URL
 
 1. **Push to GitHub** (if not done)
    ```bash
-   git push origin claude/scaffold-voice-cart-frontend-011CUQHPEJDw94ac6HJZASny
+   git push origin claude/scaffold-voicecartz-frontend-011CUQHPEJDw94ac6HJZASny
    ```
 
 2. **Choose hosting platform:**
@@ -296,7 +296,7 @@ echo $VITE_API_URL
 
 ## 🎉 Current Status
 
-**Your VoiceCart is ready to deploy!**
+**Your VoiceCartz is ready to deploy!**
 
 ✅ All code is written and tested
 ✅ Documentation is complete
@@ -305,17 +305,17 @@ echo $VITE_API_URL
 ✅ Database schema is ready
 ✅ Everything is on GitHub
 
-**You are literally 30 minutes away from using VoiceCart on your phone from anywhere!**
+**You are literally 30 minutes away from using VoiceCartz on your phone from anywhere!**
 
 ---
 
 ## 📖 Documentation Links
 
-- [USER-GUIDE.md](docs/USER-GUIDE.md) - How to use VoiceCart
+- [USER-GUIDE.md](docs/USER-GUIDE.md) - How to use VoiceCartz
 - [TECHNICAL-DOCS.md](docs/TECHNICAL-DOCS.md) - Technical details and API docs
 - [HOSTING-OPTIONS.md](docs/HOSTING-OPTIONS.md) - Complete hosting guide
 - [SESSION-SUMMARY-2025-10-26.md](docs/SESSION-SUMMARY-2025-10-26.md) - What was built today
 
 ---
 
-**Ready to deploy? Let's get VoiceCart online! 🚀**
+**Ready to deploy? Let's get VoiceCartz online! 🚀**

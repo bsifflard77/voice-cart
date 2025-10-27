@@ -105,7 +105,7 @@ function App() {
           <div className="flex justify-between items-start mb-4">
             <div className="flex-1">
               <h1 className="text-4xl font-bold text-gray-800 mb-2">
-                VoiceCart
+                VoiceCartz
               </h1>
               <p className="text-gray-600">
                 Your voice-first shopping list

@@ -1,7 +1,7 @@
-# VoiceCart Project Tracking
+# VoiceCartz Project Tracking
 
-**Project:** VoiceCart - Voice-Activated Shopping Cart System
-**Repository:** voice-cart
+**Project:** VoiceCartz - Voice-Activated Shopping Cart System
+**Repository:** voicecartz
 **Governance:** SpecMap Methodology
 **Started:** October 2025
 
@@ -26,7 +26,7 @@
 - ✅ Multi-user authentication system (Login/Register/JWT)
 - ✅ Shopping lists management UI
 - ✅ PWA features with offline support
-- ✅ Custom VoiceCart branding (icon + manifest)
+- ✅ Custom VoiceCartz branding (icon + manifest)
 - ✅ 75+ pages of comprehensive documentation
 - ✅ Complete Railway deployment guides
 - ✅ Security: API keys properly excluded from repo
@@ -42,7 +42,7 @@
 1. Deploy to Railway
 2. Test live deployment
 3. Install PWA on phone
-4. Begin using VoiceCart in production
+4. Begin using VoiceCartz in production
 
 **Details:** [Session Summary](docs/SESSION-SUMMARY-2025-10-26.md)
 
@@ -71,7 +71,7 @@
 ## Project Milestones
 
 ### Phase 1: Foundation (Current)
-- [x] Initial VoiceCart MVP development
+- [x] Initial VoiceCartz MVP development
 - [x] Database setup and configuration
 - [x] Frontend scaffolding (React + TypeScript)
 - [x] Backend API structure (Express + PostgreSQL)
@@ -135,7 +135,7 @@
 1. Initialize SpecMap project structure with `specmap init`
 2. Create project charter defining vision and scope
 3. Configure MCP server for session automation
-4. Document existing VoiceCart features in specifications
+4. Document existing VoiceCartz features in specifications
 
 ### Medium Priority
 5. Establish RULEMAP scoring criteria

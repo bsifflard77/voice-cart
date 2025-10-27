@@ -1,7 +1,7 @@
-# VoiceCart Quick Start Guide
+# VoiceCartz Quick Start Guide
 
 ## 🎨 Branding
-- **Name:** VoiceCart - Voice Shopping List
+- **Name:** VoiceCartz - Voice Shopping List
 - **Icon:** Blue shopping cart with microphone
 - **Color:** Sky Blue (#0ea5e9)
 - **Tagline:** Your voice-first shopping list app
@@ -39,7 +39,7 @@ VITE_API_URL=<your-backend-url>
 ## 🚀 Railway Deployment Steps
 
 1. **Sign up:** [railway.app](https://railway.app)
-2. **Deploy backend:** Select `voice-cart` repo (root)
+2. **Deploy backend:** Select `voicecartz` repo (root)
 3. **Add database:** Click "+ New" → PostgreSQL
 4. **Set backend vars:** Copy variables above
 5. **Deploy frontend:** Same repo, root dir = `frontend`
@@ -61,7 +61,7 @@ VITE_API_URL=<your-backend-url>
 
 - [RAILWAY-DEPLOYMENT-GUIDE.md](RAILWAY-DEPLOYMENT-GUIDE.md) - Full deployment guide
 - [DEPLOYMENT-STRATEGY.md](DEPLOYMENT-STRATEGY.md) - All hosting options
-- [docs/USER-GUIDE.md](docs/USER-GUIDE.md) - How to use VoiceCart
+- [docs/USER-GUIDE.md](docs/USER-GUIDE.md) - How to use VoiceCartz
 - [docs/TECHNICAL-DOCS.md](docs/TECHNICAL-DOCS.md) - Technical details
 - [docs/HOSTING-OPTIONS.md](docs/HOSTING-OPTIONS.md) - 9 hosting platforms
 
@@ -70,7 +70,7 @@ VITE_API_URL=<your-backend-url>
 ```
 Backend:  https://________________________________.up.railway.app
 Frontend: https://________________________________.up.railway.app
-GitHub:   https://github.com/bsifflard77/voice-cart
+GitHub:   https://github.com/bsifflard77/voicecartz
 ```
 
 ## ✅ Deployment Checklist
@@ -125,4 +125,4 @@ Everything is prepared and ready to go. Follow [RAILWAY-DEPLOYMENT-GUIDE.md](RAI
 
 **Time needed:** 30 minutes
 **Difficulty:** Easy
-**Result:** VoiceCart accessible from anywhere! 🌍
+**Result:** VoiceCartz accessible from anywhere! 🌍

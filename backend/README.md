@@ -1,6 +1,6 @@
-# VoiceCart Backend API
+# VoiceCartz Backend API
 
-Node.js + Express + PostgreSQL backend for VoiceCart with AI-powered item categorization.
+Node.js + Express + PostgreSQL backend for VoiceCartz with AI-powered item categorization.
 
 ## Features
 
@@ -42,7 +42,7 @@ sudo systemctl start postgresql
 psql -U postgres
 
 # Create database
-CREATE DATABASE voicecart;
+CREATE DATABASE voicecartz;
 
 # Exit psql
 \q
@@ -68,7 +68,7 @@ cp .env.example .env
 ```
 DB_HOST=localhost
 DB_PORT=5432
-DB_NAME=voicecart
+DB_NAME=voicecartz
 DB_USER=postgres
 DB_PASSWORD=your_postgres_password
 PORT=5000

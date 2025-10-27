@@ -1,13 +1,13 @@
-# VoiceCart User Guide
+# VoiceCartz User Guide
 
 **Version:** 2.0
 **Last Updated:** October 26, 2025
 
 ---
 
-## Welcome to VoiceCart! 🛒
+## Welcome to VoiceCartz! 🛒
 
-VoiceCart is your voice-first shopping list app that makes grocery shopping easier and faster. Add items with your voice, organize by department, and manage multiple shopping lists across different stores.
+VoiceCartz is your voice-first shopping list app that makes grocery shopping easier and faster. Add items with your voice, organize by department, and manage multiple shopping lists across different stores.
 
 ---
 
@@ -28,7 +28,7 @@ VoiceCart is your voice-first shopping list app that makes grocery shopping easi
 
 ### First Time Setup
 
-1. **Open VoiceCart** in your web browser
+1. **Open VoiceCartz** in your web browser
 2. **Create an account** with your email and password
 3. **Create your first shopping list**
 4. **Start adding items** using voice or text
@@ -139,7 +139,7 @@ To permanently delete a list:
 
 ### Auto-Categorization
 
-VoiceCart automatically organizes items by department:
+VoiceCartz automatically organizes items by department:
 - **Produce** (fruits, vegetables)
 - **Dairy** (milk, cheese, eggs)
 - **Meat** (chicken, beef, fish)
@@ -180,36 +180,36 @@ Items are automatically grouped by department in the order you'd find them in th
 
 ## Installing as Mobile App
 
-VoiceCart is a Progressive Web App (PWA) that you can install on your phone or tablet for a native app experience!
+VoiceCartz is a Progressive Web App (PWA) that you can install on your phone or tablet for a native app experience!
 
 ### iOS (iPhone/iPad)
 
-1. Open VoiceCart in **Safari**
+1. Open VoiceCartz in **Safari**
 2. Tap the **Share** button (square with arrow)
 3. Scroll down and tap **"Add to Home Screen"**
-4. Enter a name (or keep "VoiceCart")
+4. Enter a name (or keep "VoiceCartz")
 5. Tap **"Add"**
 
 **Result:**
-- VoiceCart icon appears on your home screen
+- VoiceCartz icon appears on your home screen
 - Opens as a full-screen app (no browser bars)
 - Works like a native app
 
 ### Android
 
-1. Open VoiceCart in **Chrome**
+1. Open VoiceCartz in **Chrome**
 2. Tap the **menu** (three dots)
 3. Select **"Install app"** or **"Add to Home Screen"**
 4. Tap **"Install"**
 
 **Result:**
-- VoiceCart icon in your app drawer
+- VoiceCartz icon in your app drawer
 - Full-screen native experience
 - Can use offline
 
 ### Desktop (Chrome/Edge)
 
-1. Open VoiceCart in Chrome or Edge
+1. Open VoiceCartz in Chrome or Edge
 2. Look for the **install icon** ⊕ in the address bar
 3. Click it
 4. Click **"Install"**
@@ -223,7 +223,7 @@ VoiceCart is a Progressive Web App (PWA) that you can install on your phone or t
 
 ## Offline Usage
 
-VoiceCart works offline thanks to PWA technology!
+VoiceCartz works offline thanks to PWA technology!
 
 ### What Works Offline
 

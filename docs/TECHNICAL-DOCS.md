@@ -1,4 +1,4 @@
-# VoiceCart V2 Technical Documentation
+# VoiceCartz V2 Technical Documentation
 
 **Version:** 2.0
 **Last Updated:** October 26, 2025
@@ -20,7 +20,7 @@
 
 ## Architecture Overview
 
-VoiceCart follows a modern three-tier architecture:
+VoiceCartz follows a modern three-tier architecture:
 
 ```
 ┌─────────────────────────────────────┐
@@ -93,7 +93,7 @@ VoiceCart follows a modern three-tier architecture:
 
 ### Overview
 
-VoiceCart V2 uses JWT (JSON Web Tokens) for stateless authentication.
+VoiceCartz V2 uses JWT (JSON Web Tokens) for stateless authentication.
 
 ### Flow
 
@@ -550,8 +550,8 @@ CREATE TABLE departments (
 
 ```json
 {
-  "name": "VoiceCart - Voice Shopping List",
-  "short_name": "VoiceCart",
+  "name": "VoiceCartz - Voice Shopping List",
+  "short_name": "VoiceCartz",
   "display": "standalone",
   "background_color": "#f0f9ff",
   "theme_color": "#0ea5e9",
@@ -617,8 +617,8 @@ navigator.serviceWorker.register('/service-worker.js')
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/voice-cart.git
-cd voice-cart
+git clone https://github.com/yourusername/voicecartz.git
+cd voicecartz
 
 # Install backend dependencies
 cd backend
@@ -637,7 +637,7 @@ DB_HOST=localhost
 DB_PORT=5432
 DB_USER=postgres
 DB_PASSWORD=your_password
-DB_NAME=voicecart
+DB_NAME=voicecartz
 
 PORT=5000
 NODE_ENV=development
@@ -657,13 +657,13 @@ VITE_API_URL=http://localhost:5000
 
 ```bash
 # Create database
-createdb voicecart
+createdb voicecartz
 
 # Run schema
-psql -d voicecart -f backend/database-schema-v2.sql
+psql -d voicecartz -f backend/database-schema-v2.sql
 
 # Insert sample data
-psql -d voicecart -f backend/seed-data.sql
+psql -d voicecartz -f backend/seed-data.sql
 ```
 
 ### Running Development Servers
@@ -721,12 +721,12 @@ DB_HOST=production-db-host
 DB_PORT=5432
 DB_USER=production_user
 DB_PASSWORD=strong_password
-DB_NAME=voicecart_prod
+DB_NAME=voicecartz_prod
 
 PORT=5000
 NODE_ENV=production
 
-FRONTEND_URL=https://voicecart.com
+FRONTEND_URL=https://voicecartz.com
 
 OPENAI_API_KEY=sk-prod-key
 JWT_SECRET=strong-random-secret-min-32-chars
@@ -734,7 +734,7 @@ JWT_SECRET=strong-random-secret-min-32-chars
 
 **Frontend:**
 ```env
-VITE_API_URL=https://api.voicecart.com
+VITE_API_URL=https://api.voicecartz.com
 ```
 
 ---

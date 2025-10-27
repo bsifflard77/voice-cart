@@ -63,7 +63,7 @@ app.use('/api/v2/items', itemsV2Routes)
 // Root endpoint
 app.get('/', (req, res) => {
   res.json({
-    name: 'VoiceCart API',
+    name: 'VoiceCartz API',
     version: '2.0.0',
     endpoints: {
       // V2 - Authentication & Shopping Lists
@@ -102,14 +102,14 @@ app.use((err, req, res, next) => {
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`
 ╔═══════════════════════════════════════╗
-║     VoiceCart API Server Running      ║
+║     VoiceCartz API Server Running      ║
 ╠═══════════════════════════════════════╣
 ║  Port: ${PORT}
 ║  Host: 0.0.0.0 (all interfaces)
 ║  Local: http://localhost:${PORT}
 ║  Network: http://192.168.40.214:${PORT}
 ║  Environment: ${process.env.NODE_ENV || 'development'}
-║  Database: ${process.env.DB_NAME || 'voicecart'}
+║  Database: ${process.env.DB_NAME || 'voicecartz'}
 ╚═══════════════════════════════════════╝
   `)
 })

@@ -1,11 +1,11 @@
-# Railway Deployment Guide - VoiceCart
-**Get VoiceCart Online in 30 Minutes**
+# Railway Deployment Guide - VoiceCartz
+**Get VoiceCartz Online in 30 Minutes**
 
 ---
 
 ## 🎯 What You're About to Do
 
-Deploy VoiceCart to Railway so you can access it from your phone anywhere in the world!
+Deploy VoiceCartz to Railway so you can access it from your phone anywhere in the world!
 
 **Time Required:** 30 minutes
 **Cost:** Free for first month ($5 credit), then $5-10/month
@@ -17,7 +17,7 @@ Deploy VoiceCart to Railway so you can access it from your phone anywhere in the
 
 Before starting, make sure you have:
 
-- [x] ✅ VoiceCart code pushed to GitHub
+- [x] ✅ VoiceCartz code pushed to GitHub
 - [x] ✅ GitHub account
 - [ ] Railway account (we'll create this)
 - [x] ✅ OpenAI API key: `sk-proj-z-iSLj0nGlvypuRmw8JP...`
@@ -43,14 +43,14 @@ Before starting, make sure you have:
 2. Select **"Deploy from GitHub repo"**
 3. If asked to install Railway GitHub app:
    - Click **"Configure GitHub App"**
-   - Select your repositories (or just `voice-cart`)
+   - Select your repositories (or just `voicecartz`)
    - Click **"Install & Authorize"**
 
 ---
 
 ### Step 3: Deploy Backend (5 minutes)
 
-1. In Railway dashboard, select your `voice-cart` repository
+1. In Railway dashboard, select your `voicecartz` repository
 2. Railway will ask which service to deploy first
 3. Select **Root directory** (this is the backend)
 4. Railway will automatically:
@@ -60,7 +60,7 @@ Before starting, make sure you have:
 5. Wait for deployment to complete (green checkmark)
 
 **Your backend URL will be something like:**
-`https://voice-cart-production-xxxx.up.railway.app`
+`https://voicecartz-production-xxxx.up.railway.app`
 
 ---
 
@@ -89,7 +89,7 @@ NODE_ENV=production
 PORT=5000
 JWT_SECRET=7be66c7647f7cc4193d1f018c77df04713ba68198a6bb6dffed99023bfe3fc59
 OPENAI_API_KEY=<copy-from-backend/.env-on-your-computer>
-FRONTEND_URL=https://voicecart-frontend.up.railway.app
+FRONTEND_URL=https://voicecartz-frontend.up.railway.app
 ```
 
 **Important:** Copy your OpenAI API key from the `backend/.env` file on your computer. Never commit API keys to GitHub!
@@ -137,7 +137,7 @@ railway run npm run db:setup
 
 1. Back in your Railway project, click **"+ New"**
 2. Select **"GitHub Repo"**
-3. Choose your `voice-cart` repository again
+3. Choose your `voicecartz` repository again
 4. This time, configure it differently:
 
 **Settings to change:**
@@ -148,12 +148,12 @@ railway run npm run db:setup
 5. Add environment variable:
    - Go to **"Variables"** tab
    - Add: `VITE_API_URL` = `<your-backend-url>`
-   - Example: `VITE_API_URL=https://voice-cart-production-xxxx.up.railway.app`
+   - Example: `VITE_API_URL=https://voicecartz-production-xxxx.up.railway.app`
 
 6. Click **"Deploy"**
 
 **Your frontend URL will be something like:**
-`https://voicecart-frontend-production-xxxx.up.railway.app`
+`https://voicecartz-frontend-production-xxxx.up.railway.app`
 
 ---
 
@@ -165,7 +165,7 @@ Now that you have your frontend URL, update the backend:
 2. Go to **"Variables"** tab
 3. Update `FRONTEND_URL` variable:
    - Change to your actual frontend URL
-   - Example: `https://voicecart-frontend-production-xxxx.up.railway.app`
+   - Example: `https://voicecartz-frontend-production-xxxx.up.railway.app`
 4. Railway will automatically redeploy
 
 ---
@@ -178,14 +178,14 @@ Railway gives you random URLs. Let's make them nicer:
 1. Click backend service → **"Settings"** tab
 2. Scroll to **"Domains"**
 3. Click **"Generate Domain"**
-4. You'll get something like: `voicecart-backend.up.railway.app`
+4. You'll get something like: `voicecartz-backend.up.railway.app`
 5. Copy this URL
 
 **Frontend:**
 1. Click frontend service → **"Settings"** tab
 2. Scroll to **"Domains"**
 3. Click **"Generate Domain"**
-4. You'll get something like: `voicecart.up.railway.app`
+4. You'll get something like: `voicecartz.up.railway.app`
 5. Copy this URL
 
 **Update backend FRONTEND_URL:**
@@ -198,7 +198,7 @@ Railway gives you random URLs. Let's make them nicer:
 ### Step 10: Test Your Deployment! 🎉 (3 minutes)
 
 1. **Open your frontend URL** in a browser:
-   - Example: `https://voicecart.up.railway.app`
+   - Example: `https://voicecartz.up.railway.app`
 
 2. **Create an account:**
    - Click "Register"
@@ -225,18 +225,18 @@ Railway gives you random URLs. Let's make them nicer:
 ## 📱 Install as PWA on Your Phone
 
 ### iOS (iPhone/iPad)
-1. Open your VoiceCart URL in Safari
+1. Open your VoiceCartz URL in Safari
 2. Tap the **Share** button (square with arrow)
 3. Scroll down and tap **"Add to Home Screen"**
 4. Tap **"Add"**
-5. VoiceCart appears as an app on your home screen!
+5. VoiceCartz appears as an app on your home screen!
 
 ### Android
-1. Open your VoiceCart URL in Chrome
+1. Open your VoiceCartz URL in Chrome
 2. Tap the **three dots** menu
 3. Tap **"Add to Home screen"** or **"Install app"**
 4. Tap **"Install"**
-5. VoiceCart appears as an app in your app drawer!
+5. VoiceCartz appears as an app in your app drawer!
 
 ---
 
@@ -353,7 +353,7 @@ After deployment, you should have:
 - [Environment Variables](https://docs.railway.app/develop/variables)
 - [Deployment Guide](https://docs.railway.app/deploy/deployments)
 
-**VoiceCart Documentation:**
+**VoiceCartz Documentation:**
 - [Technical Docs](docs/TECHNICAL-DOCS.md)
 - [User Guide](docs/USER-GUIDE.md)
 - [Hosting Options](docs/HOSTING-OPTIONS.md)
@@ -378,11 +378,11 @@ railway run npm run db:setup
 ## 🚀 Next Steps After Deployment
 
 1. **Share with friends!**
-   - Send them your VoiceCart URL
+   - Send them your VoiceCartz URL
    - They can create their own accounts
 
 2. **Customize your domain** (optional)
-   - Buy a custom domain (e.g., `myvoicecart.com`)
+   - Buy a custom domain (e.g., `myvoicecartz.com`)
    - Add it in Railway Settings → Domains
 
 3. **Monitor usage**
@@ -397,7 +397,7 @@ railway run npm run db:setup
 
 ## 🎊 Congratulations!
 
-You've successfully deployed VoiceCart to the internet!
+You've successfully deployed VoiceCartz to the internet!
 
 **What you've accomplished:**
 ✅ Deployed a full-stack application
@@ -407,7 +407,7 @@ You've successfully deployed VoiceCart to the internet!
 ✅ Created an installable PWA
 ✅ Set up offline support
 
-**VoiceCart is now live and ready to use! 🛒🎤**
+**VoiceCartz is now live and ready to use! 🛒🎤**
 
 ---
 
