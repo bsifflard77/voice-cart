@@ -13,3 +13,9 @@ interface Window {
   SpeechRecognition: any
   webkitSpeechRecognition: any
 }
+
+// SVG imports
+declare module '*.svg' {
+  const content: string
+  export default content
+}
