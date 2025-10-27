@@ -68,7 +68,7 @@ If working with a human designer, provide this comprehensive brief:
 - "Shop by Voice"
 - "Your Voice Shopping Assistant"
 - "Smart Shopping Lists, Voice First"
-- "Speak. Shop. Done."
+- "Talk. Shop. Done."
 
 **Product Description:**
 VoiceCartz is a Progressive Web App (PWA) that helps users create and manage shopping lists using voice input. It uses AI to automatically categorize items by store department, supports multiple shopping lists, works offline, and syncs across devices.

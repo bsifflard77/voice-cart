@@ -5,7 +5,7 @@
 
 **Brand Name:** VoiceCartz\
 **Domain:** VoiceCartz.com\
-**Tagline:** "Speak. Shop. Done."
+**Tagline:** Talk. Shop. Done.
 
 VoiceCartz is an AI-powered shopping companion that allows users to
 build and manage shopping lists entirely through voice. Designed for
@@ -34,7 +34,7 @@ and smart AI organization.\
 -   **Composition:** Shopping cart with vertical sound-wave bars forming
     the basket.\
 -   **Typography:** Sans-serif, geometric typeface (Inter or Poppins).\
--   **Color:** Deep blue gradient (#0EA5E9 → #3B82F6).\
+-   **Color:** Deep blue gradient (#0066FF → #3B82F6).\
 -   **Usage:** Default logo for digital, print, and presentation
     materials.
 
@@ -59,7 +59,7 @@ VoiceCartz. Minimum size for digital use is **72x72px**.
   --------------------------------------------------------------------------
   Role            Color             Hex          Description
   --------------- ----------------- ------------ ---------------------------
-  **Primary**     Rich Blue         #0EA5E9      Represents trust, tech, and
+  **Primary**     Rich Blue         #0066FF      Represents trust, tech, and
                                                  clarity
 
   **Secondary**   Deep Blue         #3B82F6      Supports primary tone for
@@ -116,7 +116,7 @@ Examples: - "Add to your 🛒 with your 🎙️ --- it's that easy!" -
 
 ### App Icon
 
--   Circular background in **Rich Blue (#0EA5E9)**.
+-   Circular background in **Rich Blue (#0066FF)**.
 -   Centered white cart-soundwave symbol.
 -   Designed for clarity at all scales (from 1024x1024px down to
     72x72px).
