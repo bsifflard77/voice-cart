@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useAuth } from '../contexts/AuthContext'
+import Logo from './Logo'
 
 interface RegisterProps {
   onSwitchToLogin: () => void
@@ -45,6 +46,9 @@ const Register = ({ onSwitchToLogin }: RegisterProps) => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center px-4 py-8">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
+          <div className="flex justify-center mb-4">
+            <Logo size="lg" />
+          </div>
           <h1 className="text-5xl font-bold text-gray-800 mb-2">
             VoiceCartz
           </h1>

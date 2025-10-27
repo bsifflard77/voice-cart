@@ -3,6 +3,7 @@ import VoiceInput from './components/VoiceInput'
 import ManualInput from './components/ManualInput'
 import ShoppingList from './components/ShoppingList'
 import ShoppingListSelector from './components/ShoppingListSelector'
+import Logo from './components/Logo'
 import { Store, Item, ShoppingList as ShoppingListType } from './types'
 import { useAuth } from './contexts/AuthContext'
 import * as api from './services/api'
@@ -103,13 +104,16 @@ function App() {
       <div className="container mx-auto px-4 py-8 max-w-2xl">
         <header className="mb-8">
           <div className="flex justify-between items-start mb-4">
-            <div className="flex-1">
-              <h1 className="text-4xl font-bold text-gray-800 mb-2">
-                VoiceCartz
-              </h1>
-              <p className="text-gray-600">
-                Your voice-first shopping list
-              </p>
+            <div className="flex items-center gap-4 flex-1">
+              <Logo size="lg" />
+              <div>
+                <h1 className="text-4xl font-bold text-gray-800 mb-2">
+                  VoiceCartz
+                </h1>
+                <p className="text-gray-600">
+                  Your voice-first shopping list
+                </p>
+              </div>
             </div>
             <div className="text-right">
               <p className="text-sm text-gray-600 mb-2">
