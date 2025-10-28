@@ -115,7 +115,7 @@ function App() {
       <div className="container mx-auto px-4 py-6 max-w-3xl">
         <header className="mb-8">
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-white/50 p-6">
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div className="flex items-center gap-3">
                 <Logo size="lg" />
                 <div>
@@ -127,7 +127,7 @@ function App() {
                   </p>
                 </div>
               </div>
-              <div className="text-right">
+              <div className="text-left sm:text-right">
                 <p className="text-sm text-gray-700 font-medium mb-1">
                   Welcome, {user?.firstName || 'User'}
                 </p>
