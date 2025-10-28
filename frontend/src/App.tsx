@@ -3,7 +3,6 @@ import VoiceInput from './components/VoiceInput'
 import ManualInput from './components/ManualInput'
 import ShoppingList from './components/ShoppingList'
 import ShoppingListSelector from './components/ShoppingListSelector'
-import Logo from './components/Logo'
 import { Store, Item, ShoppingList as ShoppingListType } from './types'
 import { useAuth } from './contexts/AuthContext'
 import * as api from './services/api'
@@ -115,29 +114,24 @@ function App() {
       <div className="container mx-auto px-4 py-6 max-w-3xl">
         <header className="mb-8">
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-white/50 p-6">
-            <div className="flex justify-between items-start">
-              <div className="flex items-center gap-4 flex-1">
-                <Logo size="lg" />
-                <div>
-                  <h1 className="text-4xl font-bold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent mb-1">
-                    VoiceCartz
-                  </h1>
-                  <p className="text-gray-600 font-medium">
-                    Your voice-first shopping companion
-                  </p>
-                </div>
-              </div>
-              <div className="text-right">
-                <p className="text-sm text-gray-700 mb-2 font-medium">
-                  Welcome, {user?.firstName || 'User'}
-                </p>
-                <button
-                  onClick={logout}
-                  className="text-xs text-primary-600 hover:text-primary-700 font-semibold hover:underline transition-all"
-                >
-                  Sign Out
-                </button>
-              </div>
+            <div className="flex justify-between items-center mb-3">
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent">
+                VoiceCartz
+              </h1>
+              <button
+                onClick={logout}
+                className="text-sm text-primary-600 hover:text-primary-700 font-semibold hover:underline transition-all"
+              >
+                Sign Out
+              </button>
+            </div>
+            <div className="flex justify-between items-center">
+              <p className="text-gray-600 font-medium">
+                Your voice-first shopping companion
+              </p>
+              <p className="text-sm text-gray-700 font-medium">
+                Welcome, {user?.firstName || 'User'}
+              </p>
             </div>
           </div>
         </header>
