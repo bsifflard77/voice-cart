@@ -99,10 +99,10 @@ export default function ItemCard({ item, onPickup, onDelete, onUpdate }: ItemCar
             )}
           </div>
 
-          <div className="flex items-center gap-1 ml-4 flex-shrink-0">
+          <div className="flex items-center gap-1.5 ml-4 flex-shrink-0">
             <button
               onClick={() => setIsEditing(true)}
-              className="p-2.5 rounded-lg text-gray-400 hover:text-primary-600 hover:bg-primary-50 transition-all duration-200"
+              className="p-3 rounded-lg bg-primary-50 text-primary-600 hover:bg-primary-100 active:bg-primary-200 transition-all duration-200 touch-manipulation"
               aria-label="Edit item"
               disabled={isPickedUp}
             >
@@ -111,10 +111,10 @@ export default function ItemCard({ item, onPickup, onDelete, onUpdate }: ItemCar
 
             <button
               onClick={() => onPickup(item.id)}
-              className={`p-2.5 rounded-lg transition-all duration-200 ${
+              className={`p-3 rounded-lg transition-all duration-200 touch-manipulation ${
                 isPickedUp
-                  ? 'text-green-600 hover:text-green-700 hover:bg-green-50'
-                  : 'text-gray-400 hover:text-green-600 hover:bg-green-50'
+                  ? 'bg-green-50 text-green-600 hover:bg-green-100 active:bg-green-200'
+                  : 'bg-gray-100 text-gray-600 hover:bg-green-50 hover:text-green-600 active:bg-green-100'
               }`}
               aria-label={isPickedUp ? 'Mark as not picked up' : 'Mark as picked up'}
             >
@@ -127,7 +127,7 @@ export default function ItemCard({ item, onPickup, onDelete, onUpdate }: ItemCar
 
             <button
               onClick={() => onDelete(item.id)}
-              className="p-2.5 rounded-lg text-gray-400 hover:text-red-600 hover:bg-red-50 transition-all duration-200"
+              className="p-3 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 active:bg-red-200 transition-all duration-200 touch-manipulation"
               aria-label="Delete item"
             >
               <TrashIcon className="h-5 w-5" />
